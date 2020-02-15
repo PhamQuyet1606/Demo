@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  TouchableOpacity,
 } from 'react-native';
 
 import {
@@ -25,6 +26,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const App: () => React$Node = () => {
+  const [count, setCount] = useState(9);
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -35,16 +37,19 @@ const App: () => React$Node = () => {
           <Header />
           {global.HermesInternal == null ? null : (
             <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
+              <Text style={styles.footer}>Engine: {count}</Text>
+              <TouchableOpacity onPress={() => setCount(count + 1)}>
+                <Text>Ahihihi</Text>
+              </TouchableOpacity>
             </View>
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
+              <Text style={styles.footer}>Engine: {count}</Text>
+              <TouchableOpacity onPress={() => setCount(count + 1)}>
+                <Text>Ahihihi</Text>
+              </TouchableOpacity>
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>See Your Changes</Text>
