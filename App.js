@@ -26,8 +26,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const App: () => React$Node = () => {
-  const [count, setCount] = useState(0);
-
+  const [count, setCount] = useState(2);
   return (
     <>
       <StatusBar barStyle="dark-content" />
